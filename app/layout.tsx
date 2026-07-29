@@ -5,6 +5,7 @@ import {
   Space_Grotesk,
 } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 /* The three faces the ambassador site loads. next/font lives in the demo
  * app only — the RewardLadder component itself reads `var(--font-display)`
@@ -64,7 +65,9 @@ export default function RootLayout({
       lang="en"
       className={`${bricolage.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">{children}
+        <Analytics />
+      </body>
     </html>
   );
 }
