@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* Map the EYFI tokens onto Tailwind v4's utility namespaces so
+ * `bg-background`, `text-muted-foreground`, `border-border`, `bg-primary`…
+ * resolve exactly the way they do on the live site. One entry per token in
+ * tokens.css — no orphans in either direction. */
+@theme inline {
+  --color-background: var(--background);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted-foreground-2: var(--muted-foreground-2);
+  --color-muted-foreground-3: var(--muted-foreground-3);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-gold: var(--gold);
+  --color-ring: var(--ring);
+}
+
+/* A plain utility rather than a @theme entry: the ambassador site already
+ * ships a `.font-display` class name, and matching it keeps markup portable
+ * between the two codebases. */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}

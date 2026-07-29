@@ -1,0 +1,8 @@
+/* Throwaway harness styles — deleted with app/preview/. */
+
+.preview-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}

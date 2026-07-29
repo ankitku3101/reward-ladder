@@ -1,0 +1,54 @@
+/* EYFI design tokens
+ * Extracted from ambassador.eyfichallenge.com (page source).
+ *
+ * Names follow the shadcn semantic convention already in use on that site
+ * (bg-background, text-muted-foreground, border-border, bg-primary,
+ * text-primary-foreground) so this layer drops into that codebase without
+ * renaming a thing.
+ *
+ * Every token below is consumed by something. The full extracted palette
+ * that ships to a consuming project lives in `registry.json` → cssVars.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ── paper ──────────────────────────────────────────────── */
+  --background: #0a0a0a; /* <meta name="theme-color"> */
+  --border: #232323;
+  --border-strong: #2a2a2a;
+
+  /* ── ink · a three-step dim ladder, as the source uses ──── */
+  --foreground: #ffffff;
+  --muted-foreground: #c8c8c4;
+  --muted-foreground-2: #8a8a85;
+  --muted-foreground-3: #4a4a4a;
+
+  /* ── accent · lime ──────────────────────────────────────── */
+  --primary: #c4f62e;
+  --primary-foreground: #0a0a0a;
+  --primary-rgb: 196 246 46; /* the source glows at .04 / .06 / .22 / .4 */
+
+  /* ── accent · gold (their `orange` token) ───────────────── */
+  --gold: #e8b923;
+  --gold-rgb: 232 185 35;
+
+  /* ── typography roles ───────────────────────────────────── */
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-serif-italic: var(--font-instrument), ui-serif, Georgia, serif;
+
+  /* ── focus ──────────────────────────────────────────────── */
+  --ring: #c4f62e;
+
+  /* ── motion ─────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-mid: 280ms;
+  --dur-slow: 420ms;
+
+  /* ── radius ─────────────────────────────────────────────── */
+  --radius-card: 14px; /* the source's ladder card */
+  --radius-row: 12px; /* the source's tier rows */
+  --radius-pill: 999px;
+}
