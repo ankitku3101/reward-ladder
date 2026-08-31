@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { EYFI_LEADERBOARD_VIEWS, Leaderboard } from "@/components/leaderboard";
 import { EYFI_TIERS, RewardLadder } from "@/components/reward-ladder";
 import "./preview.css";
 
@@ -66,6 +67,82 @@ export default function Preview() {
                 "Short one",
               ],
               note: "And a closing note in the italic serif.",
+            },
+          ]}
+        />
+      </section>
+
+      <section className="mt-14">
+        <h2 className="font-display text-lg">Leaderboard — default, both views</h2>
+        <p className="mb-4 text-sm text-muted-foreground">
+          The toggle switches between Top Earners and Top Campuses. Try it,
+          then check with reduced motion enabled — the entrance stagger and
+          count-up should both disappear.
+        </p>
+        <Leaderboard />
+      </section>
+
+      <section className="mt-14">
+        <h2 className="font-display text-lg">Leaderboard — single view (toggle hidden)</h2>
+        <p className="mb-4 text-sm text-muted-foreground">
+          Passing one view drops the toggle entirely rather than rendering a
+          single disabled option.
+        </p>
+        <Leaderboard
+          views={[EYFI_LEADERBOARD_VIEWS[0]]}
+          title="Only one view"
+          subtitle={null}
+        />
+      </section>
+
+      <section className="mt-14">
+        <h2 className="font-display text-lg">Leaderboard — overflow copy</h2>
+        <p className="mb-4 text-sm text-muted-foreground">
+          Confirms long names and campus strings wrap or truncate without
+          breaking the podium or row grid.
+        </p>
+        <Leaderboard
+          title="Copy overflow"
+          subtitle={null}
+          views={[
+            {
+              id: "overflow",
+              label: "Overflow",
+              entries: [
+                {
+                  id: "o-1",
+                  rank: 1,
+                  previousRank: 1,
+                  name: "Venkataramanan Subramaniam Iyer",
+                  detail: "Sri Venkateswara College of Engineering and Technology",
+                  income: 219400,
+                },
+                {
+                  id: "o-2",
+                  rank: 2,
+                  previousRank: 2,
+                  name: "Priya S.",
+                  detail: "BITS Pilani",
+                  income: 152900,
+                },
+                {
+                  id: "o-3",
+                  rank: 3,
+                  name: "Riya K.",
+                  detail: "NIT Trichy",
+                  income: 131000,
+                },
+                {
+                  id: "o-you",
+                  rank: 4,
+                  previousRank: 9,
+                  name: "You",
+                  detail: "An Extremely Long Campus Name That Should Ellipsis Cleanly",
+                  income: 98000,
+                  isSelf: true,
+                  streak: true,
+                },
+              ],
             },
           ]}
         />

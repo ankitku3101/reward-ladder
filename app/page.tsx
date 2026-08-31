@@ -1,3 +1,4 @@
+import { Leaderboard } from "@/components/leaderboard";
 import { RewardLadder } from "@/components/reward-ladder";
 
 export default function Home() {
@@ -27,6 +28,10 @@ export default function Home() {
         </div>
 
         <RewardLadder celebrateAtMax />
+
+        <div className="py-16 sm:py-24">
+          <Leaderboard />
+        </div>
       </div>
     </main>
   );

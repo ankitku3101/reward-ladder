@@ -64,6 +64,57 @@
           "--gold-rgb": "232 185 35"
         }
       }
+    },
+    {
+      "name": "leaderboard",
+      "type": "registry:block",
+      "title": "EYFI Leaderboard",
+      "description": "An asymmetric podium for the top 3, a \"your rank\" callout, and a ranked list below — with a toggle between Top Earners and Top Campuses rivalry views.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/leaderboard/leaderboard.tsx",
+          "type": "registry:component",
+          "target": "components/leaderboard/leaderboard.tsx"
+        },
+        {
+          "path": "components/leaderboard/leaderboard.css",
+          "type": "registry:component",
+          "target": "components/leaderboard/leaderboard.css"
+        },
+        {
+          "path": "components/leaderboard/entries.ts",
+          "type": "registry:component",
+          "target": "components/leaderboard/entries.ts"
+        },
+        {
+          "path": "components/leaderboard/index.ts",
+          "type": "registry:component",
+          "target": "components/leaderboard/index.ts"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "--ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+          "--dur-fast": "150ms",
+          "--dur-mid": "280ms",
+          "--radius-card": "14px",
+          "--radius-row": "12px",
+          "--radius-pill": "999px"
+        },
+        "dark": {
+          "--background": "#0a0a0a",
+          "--border-strong": "#2a2a2a",
+          "--foreground": "#ffffff",
+          "--muted-foreground": "#c8c8c4",
+          "--muted-foreground-2": "#8a8a85",
+          "--muted-foreground-3": "#4a4a4a",
+          "--primary": "#c4f62e",
+          "--primary-rgb": "196 246 46",
+          "--gold": "#e8b923",
+          "--gold-rgb": "232 185 35"
+        }
+      }
     }
   ]
 }
